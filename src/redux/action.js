@@ -20,6 +20,15 @@ export const fetchData = () => {
   };
 };
 
+export const addData = (data) => {
+  return async function (dispatch) {
+    await axios.post(`${process.env.REACT_APP_API}/passenger`, data);
+    dispatch({
+      type: "ADD_PASSENGER",
+    });
+  };
+};
+
 export const deleteData = (id) => {
   return async function (dispatch) {
     await axios

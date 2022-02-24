@@ -30,13 +30,13 @@ function EditDetail() {
 
   useEffect(() => {
     dispatch(getSinglePassenger(id));
-  }, [id]);
+  }, [dispatch, id]);
 
   useEffect(() => {
     if (passenger) {
       setState({ ...data });
     }
-  }, []);
+  }, [passenger]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -79,7 +79,7 @@ function EditDetail() {
           name="airline"
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={state.airline}
+          value={state.airline || ""}
           label="Airline"
           style={{
             textAlign: "left",

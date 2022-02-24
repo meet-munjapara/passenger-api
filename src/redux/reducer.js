@@ -18,6 +18,7 @@ const passengersReducer = (state = initialState, action) => {
         passengers: action.payload,
       };
 
+    case "ADD_PASSENGER":
     case "DELETE_PASSENGER":
     case "UPDATE_PASSENGER":
       return {

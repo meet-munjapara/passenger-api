@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import { Button, TextField, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addData } from "../redux/action";
 
 function AddDetail() {
   const history = useHistory();
+  const dispatch = useDispatch();
   const [state, setState] = useState({
     name: "",
     trips: "",
@@ -20,6 +23,7 @@ function AddDetail() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("data", state);
+    dispatch(addData(state));
     history.push("/");
   };
 

@@ -35,7 +35,6 @@ function Home() {
   const history = useHistory();
   const dispatch = useDispatch();
   const { passengers } = useSelector((state) => state);
-  // let data = passengers.slice(0, 5);
 
   useEffect(() => {
     dispatch(fetchData());
