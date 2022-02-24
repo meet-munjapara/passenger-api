@@ -22,7 +22,6 @@ function AddDetail() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("data", state);
     dispatch(addData(state));
     history.push("/");
   };
@@ -65,7 +64,6 @@ function AddDetail() {
         onClick={() => history.push("/")}
         style={{ width: "20%" }}
         variant="contained"
-        type="Submit"
       >
         Exit
       </Button>
