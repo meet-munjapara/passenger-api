@@ -10,12 +10,24 @@ export const fetchAirlineData = () => {
   };
 };
 
-export const fetchData = () => {
+export const fetchAllData = () => {
   return async function (dispatch) {
     const response = await axios.get(`${process.env.REACT_APP_API}/passenger`);
     dispatch({
+      type: "GET_ALL_PASSENGER",
+      payload: response.data.data,
+    });
+  };
+};
+
+export const fetchData = (page) => {
+  return async function (dispatch) {
+    const response = await axios.get(
+      `${process.env.REACT_APP_API}/passenger?page=${page}&size=5`
+    );
+    dispatch({
       type: "GET_PASSENGER",
-      payload: response.data.data.slice(0, 10),
+      payload: response.data.data,
     });
   };
 };

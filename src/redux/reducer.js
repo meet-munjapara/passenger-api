@@ -1,6 +1,7 @@
 const initialState = {
   airlines: [],
   passengers: [],
+  allPassengers: [],
   passenger: {},
 };
 
@@ -10,6 +11,12 @@ const passengersReducer = (state = initialState, action) => {
       return {
         ...state,
         airlines: action.payload,
+      };
+
+    case "GET_ALL_PASSENGER":
+      return {
+        ...state,
+        allPassengers: action.payload,
       };
 
     case "GET_PASSENGER":
