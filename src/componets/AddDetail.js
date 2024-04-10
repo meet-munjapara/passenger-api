@@ -7,6 +7,7 @@ import { addData } from "../redux/action";
 
 function AddDetail() {
   const history = useHistory();
+  console.log("history: ", history);
   const dispatch = useDispatch();
   const [state, setState] = useState({
     name: "",
